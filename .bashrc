@@ -1,17 +1,18 @@
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:/usr/sbin
-export PATH=$PATH:/usr/bin
-export PATH=$PATH:/sbin
-export PATH=$PATH:/bin
+#!/bin/bash
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+# Extensions repository path
+EXTREPO=~/bash-extensions
 
-if [ -e ~/.bash_ext/ ]; then
-    for ext in ~/.bash-extensions/*.bashext
-    do
-        source $ext
-    done
+# Test extensions repository
+if [ -e $EXTREPO ]; then
+  for ext in $EXTREPO/*.bashext
+  do
+      source $ext
+  done
+else
+  echo "$EXTREPO not found."
+  echo "Point \$EXTREPO variable to your bashext repository or clone bash-extensions into $EXTREPO with the command"
+  echo "    $ git clone https://github.com/Basask/bash-extensions $EXTREPO"
 fi
 
 
