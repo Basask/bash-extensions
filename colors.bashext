@@ -15,4 +15,3 @@ function color_cat {
 }
 alias _cat="/bin/cat"
 alias cat="color_cat"
-
