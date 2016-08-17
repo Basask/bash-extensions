@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+alias legacyvim="vim"
+alias vim="nvim"
+alias vi="nvim"
+
